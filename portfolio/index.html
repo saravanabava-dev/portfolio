@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saravana Bava — Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Saravana Bava, a full-stack MERN developer building scalable web applications with React.js, Node.js, and Express.js." />
+  <meta name="theme-color" content="#0d1117" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-theme="dark">
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ============ NAVBAR (editor tab-bar motif) ============ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>SB<span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-tabs" id="navTabs">
+        <a href="#about" class="nav-tab">About</a>
+        <a href="#skills" class="nav-tab">Skills</a>
+        <a href="#dsa" class="nav-tab">Coding</a>
+        <a href="#education" class="nav-tab">Education</a>
+        <a href="#experience" class="nav-tab">Experience</a>
+        <a href="#projects" class="nav-tab">Projects</a>
+        <a href="#achievements" class="nav-tab">Achievements</a>
+        <a href="#contact" class="nav-tab">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark mode">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#dsa">Coding</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-glow glow-amber"></div>
+      <div class="hero-glow glow-blue"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="dot"></span> available for opportunities</p>
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Saravana Bava</span>
+        </h1>
+        <h2 class="hero-subtitle">
+          <span id="typewriter"></span><span class="cursor-blink">|</span>
+        </h2>
+        <p class="hero-desc">
+         Final-year Information Technology student with a strong interest in Java, Full-Stack Development, and Data Structures & Algorithms. Experienced in building scalable web applications and committed to continuously improving software development and problem-solving skills.
+
+        </p>
+        <div class="hero-actions">
+          <a href="assets/resume/Resume_Saravana.pdf" download class="btn btn-primary">
+            <span>Download Résumé</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost">
+            <span>Let's Talk</span>
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/saravanabava-dev" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.02 3.29 9.28 7.86 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.05 11.05 0 015.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55A10.53 10.53 0 0023.5 12.02C23.5 5.74 18.27.5 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 11.02-4.12 2.06 2.06 0 01-.02 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a>
+          <a href="mailto:saravanabava2704@gmail.com" aria-label="Email" class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4V4z"/><path d="M4 4l8 8 8-8"/></svg>
+          </a>
+        </div>
+      </div>
+  <div class="hero-visual">
+        <div class="hero-visual-inner">
+          <!-- Circular profile photo: glowing animated border + floating animation.
+               To use your own photo, replace assets/images/profile.jpg — if that file
+               is missing, the SVG placeholder below is shown automatically. -->
+          <div class="photo-frame">
+            <div class="photo-frame-ring"></div>
+            <img
+              src="assets/images/prof.jpeg"
+              alt="Saravana Bava"
+              onerror="this.onerror=null;this.src='assets/images/placeholder-avatar.svg';"
+            />
+          </div>
+
+          
+
+        
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>
+            I'm a final-year Information Technology student at Nehru Institute of Engineering
+            and Technology, with hands-on experience gained through multiple software development internships.. My
+            core programming language is Java, and I build full-stack applications and REST
+            APIs with MongoDB, Express.js, React.js, and Node.js.I'm passionate about problem solving, Data Structures & Algorithms, and building scalable, user-friendly applications.
+          </p>
+          <p>
+            Across four internships, I've gone from writing my first Java programs to shipping
+            RESTful APIs and responsive interfaces that hold up across devices and browsers. I'm
+            currently sharpening my Data Structures &amp; Algorithms skills and exploring more
+            advanced full-stack patterns.
+          </p>
+          <p>
+            When I'm not shipping code, I'm working through algorithm problems, entering
+            hackathons, or picking apart how well-built products are structured. Open to
+            internship opportunities — let's connect and build something impactful.
+          </p>
+        </div>
+
+        <div class="about-facts reveal">
+          <div class="fact-card">
+            <span class="fact-label">Location</span>
+            <span class="fact-value">Coimbatore, Tamil Nadu, India</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-label">Degree</span>
+            <span class="fact-value">B.Tech IT (Honours), 2023–2027</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-label">CGPA</span>
+            <span class="fact-value">8.95 / 10</span>
+          </div>
+        
+          <div class="fact-card">
+            <span class="fact-label">Languages</span>
+            <span class="fact-value">Tamil (Native), English (Professional)</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-label">Email</span>
+            <span class="fact-value">saravanabava2704@gmail.com</span>
+          </div>
+          <div class="fact-card">
+            <span class="fact-label">Phone</span>
+            <span class="fact-value">+91 7200206108</span>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="counters reveal">
+        <div class="counter-card">
+          <span class="counter-num" data-target="4">0</span>
+          <span class="counter-label">Internships</span>
+        </div>
+        <div class="counter-card">
+          <span class="counter-num" data-target="4">0</span>
+          <span class="counter-label">Featured Projects</span>
+        </div>
+        <div class="counter-card">
+          <span class="counter-num" data-target="10">0</span><span class="counter-plus">+</span>
+          <span class="counter-label">Certifications &amp; Awards</span>
+        </div>
+        <div class="counter-card">
+          <span class="counter-num" data-target="8" data-decimal="95">0</span>
+          <span class="counter-label">CGPA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="section section-alt" id="skills">
+    <div class="section-inner">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3 class="skill-cat-title"><span class="cat-icon">{ }</span> Languages</h3>
+          <div class="skill-bars">
+            <div class="skill-bar" data-level="80"><span class="skill-name">C</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="90"><span class="skill-name">Java</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="90"><span class="skill-name">JavaScript</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="78"><span class="skill-name">SQL</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat-title"><span class="cat-icon">&lt;/&gt;</span> Frameworks</h3>
+          <div class="skill-bars">
+            <div class="skill-bar" data-level="90"><span class="skill-name">React.js</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="85"><span class="skill-name">Node.js</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="85"><span class="skill-name">Express.js</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+            <div class="skill-bar" data-level="80"><span class="skill-name">Bootstrap</span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <h3 class="skill-cat-title"><span class="cat-icon">&#9881;</span> Tools &amp; Databases</h3>
+          <div class="skill-rings">
+            <div class="ring-item" data-level="88">
+              <svg class="ring-svg" viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"/><circle class="ring-fg" cx="50" cy="50" r="42"/></svg>
+              <span class="ring-pct">0%</span><span class="ring-label">Git / GitHub</span>
+            </div>
+            <div class="ring-item" data-level="82">
+              <svg class="ring-svg" viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"/><circle class="ring-fg" cx="50" cy="50" r="42"/></svg>
+              <span class="ring-pct">0%</span><span class="ring-label">MongoDB</span>
+            </div>
+            <div class="ring-item" data-level="78">
+              <svg class="ring-svg" viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"/><circle class="ring-fg" cx="50" cy="50" r="42"/></svg>
+              <span class="ring-pct">0%</span><span class="ring-label">MySQL</span>
+            </div>
+            <div class="ring-item" data-level="80"><svg class="ring-svg" viewBox="0 0 100 100"><circle class="ring-bg" cx="50" cy="50" r="42"/><circle class="ring-fg" cx="50" cy="50" r="42"/></svg>
+              <span class="ring-pct">0%</span><span class="ring-label">Postman</span>
+            </div>
+          </div>
+          <p class="skill-tools-note">+ VS Code</p>
+        </div>
+      </div>
+
+      <p class="skills-note">Also exploring: <span class="tag"> System Design</span> <span class="tag">Data Structures &amp; Algorithms</span></p>
+    </div>
+  </section>
+
+  <!-- ============ CODING DASHBOARD ============ -->
+  <section class="section" id="dsa">
+    <div class="section-inner">
+      <h2 class="section-title">
+        Coding Dashboard
+      </h2>
+
+      <!-- Single horizontal row of compact stat cards -->
+      <div class="dsa-mini-row reveal">
+        <div class="dsa-mini-card dsa-mini-total accent-amber" title="347 problems solved across LeetCode, GeeksforGeeks, and Code360.">
+          <span class="dsa-mini-label">Total Solved</span><span class="counter-num" data-target="347">0</span><span class="counter-plus"></span>        </div>
+
+        <a href="https://leetcode.com/u/SaravanaBava/" target="_blank" rel="noopener" class="dsa-mini-card accent-amber">
+          <span class="dsa-mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.48 22c-.4 0-.79-.14-1.1-.43l-4.9-4.55a2.53 2.53 0 01-.7-1.31 2.6 2.6 0 01.44-1.95l5.42-7.34a2.55 2.55 0 013.61-.5 2.6 2.6 0 01.5 3.63l-4.06 5.49 3.63 3.37a2.55 2.55 0 01.13 3.6 2.5 2.5 0 01-1.97.99zM3.34 12.7a1 1 0 01-.72-1.7L9.05 4.4a1 1 0 111.44 1.39L4.06 12.4a1 1 0 01-.72.3z"/></svg></span>
+          <span class="dsa-mini-label">LeetCode</span>
+          <span class="dsa-mini-num"><span class="counter-num" data-target="88">0</span></span>
+        </a>
+
+        <a href="https://www.geeksforgeeks.org/profile/saravanaba07t" target="_blank" rel="noopener" class="dsa-mini-card accent-green">
+          <span class="dsa-mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.5 3.5 0 01-2.4.94h-6.2a.9.9 0 01-.9-.9v-1.8a.9.9 0 01.9-.9h5.1a.6.6 0 00.6-.6v-.3a.6.6 0 00-.6-.6h-6.9a2.7 2.7 0 00-2.7 2.7v1.8a2.7 2.7 0 002.7 2.7h6.9a5.3 5.3 0 003.65-1.46 5 5 0 00.415-4.325h-2.1c.12.32.18.665.18 1.02 0 .35-.06.68-.18 1z"/></svg></span>
+          <span class="dsa-mini-label">GeeksforGeeks</span>
+          <span class="dsa-mini-num"><span class="counter-num" data-target="127">0</span></span>
+        </a>
+
+        <a href="https://www.naukri.com/code360/profile/24ceb09b-652b-4626-83dd-262230163ff7" target="_blank" rel="noopener" class="dsa-mini-card accent-blue">
+          <span class="dsa-mini-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4l-6 8 6 8M16 4l6 8-6 8"/></svg></span>
+          <span class="dsa-mini-label">Code360</span>
+          <span class="dsa-mini-num"><span class="counter-num" data-target="132">0</span></span>
+        </a>
+      </div>
+
+      <!-- Platform cards: glassmorphism + neon hover, only fields with real data -->
+      <div class="dsa-platform-grid dsa-platform-grid-3">
+
+        <a href="https://leetcode.com/u/SaravanaBava/" target="_blank" rel="noopener" class="dsa-platform-card accent-amber reveal">
+          <div class="dsa-platform-head">
+            <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.48 22c-.4 0-.79-.14-1.1-.43l-4.9-4.55a2.53 2.53 0 01-.7-1.31 2.6 2.6 0 01.44-1.95l5.42-7.34a2.55 2.55 0 013.61-.5 2.6 2.6 0 01.5 3.63l-4.06 5.49 3.63 3.37a2.55 2.55 0 01.13 3.6 2.5 2.5 0 01-1.97.99zM3.34 12.7a1 1 0 01-.72-1.7L9.05 4.4a1 1 0 111.44 1.39L4.06 12.4a1 1 0 01-.72.3z"/></svg></span>
+            <h3>LeetCode</h3>
+          </div>
+          <span class="dsa-platform-num counter-num" data-target="88">0</span>
+          <span class="dsa-platform-sub">Problems Solved</span>
+
+          <div class="dsa-diff-bar">
+            <div class="dsa-diff-seg diff-easy" style="width:68.2%"></div>
+            <div class="dsa-diff-seg diff-med" style="width:27.3%"></div>
+            <div class="dsa-diff-seg diff-hard" style="width:4.5%"></div>
+          </div>
+          <div class="dsa-diff-legend">
+            <span class="diff-e">Easy 60</span><span class="diff-m">Med 24</span><span class="diff-h">Hard 4</span>
+          </div>
+
+          <ul class="dsa-stat-list">
+            <li><span>Rank</span><strong>~1,736,269</strong></li>
+            <li><span>Streak</span><strong>Max 15 days</strong></li>
+            <li><span>Badges</span><strong>1 — 50 Days Badge 2026</strong></li>
+          </ul>
+          <span class="dsa-view-link">View Profile →</span>
+        </a>
+
+        <a href="https://www.geeksforgeeks.org/profile/saravanaba07t" target="_blank" rel="noopener" class="dsa-platform-card accent-green reveal">
+          <div class="dsa-platform-head">
+            <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.5 3.5 0 01-2.4.94h-6.2a.9.9 0 01-.9-.9v-1.8a.9.9 0 01.9-.9h5.1a.6.6 0 00.6-.6v-.3a.6.6 0 00-.6-.6h-6.9a2.7 2.7 0 00-2.7 2.7v1.8a2.7 2.7 0 002.7 2.7h6.9a5.3 5.3 0 003.65-1.46 5 5 0 00.415-4.325h-2.1c.12.32.18.665.18 1.02 0 .35-.06.68-.18 1z"/></svg></span>
+            <h3>GeeksforGeeks</h3>
+          </div>
+          <span class="dsa-platform-num counter-num" data-target="127">0</span>
+          <span class="dsa-platform-sub">Problems Solved</span>
+
+          <div class="dsa-diff-bar">
+            <div class="dsa-diff-seg diff-basic" style="width:20.5%"></div>
+            <div class="dsa-diff-seg diff-easy" style="width:47.2%"></div>
+            <div class="dsa-diff-seg diff-med" style="width:29.9%"></div>
+            <div class="dsa-diff-seg diff-hard" style="width:2.4%"></div>
+          </div>
+          <div class="dsa-diff-legend">
+            <span class="diff-b">Basic 26</span><span class="diff-e">Easy 60</span><span class="diff-m">Med 38</span><span class="diff-h">Hard 3</span>
+          </div>
+
+          <ul class="dsa-stat-list">
+            <li><span>Coding Score</span><strong>324</strong></li>
+            <li><span>Institute Rank</span><strong>8</strong></li>
+            <li><span>Track</span><strong>Java Programming</strong></li>
+          </ul>
+          <span class="dsa-view-link">View Profile →</span>
+        </a>
+
+        <a href="https://www.naukri.com/code360/profile/24ceb09b-652b-4626-83dd-262230163ff7" target="_blank" rel="noopener" class="dsa-platform-card accent-blue reveal">
+          <div class="dsa-platform-head">
+            <span class="logo-chip"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4l-6 8 6 8M16 4l6 8-6 8"/></svg></span>
+            <h3>Code360</h3>
+          </div>
+          <span class="dsa-platform-num counter-num" data-target="132">0</span>
+          <span class="dsa-platform-sub">Coding Problems · 24 MCQ</span>
+
+          <div class="dsa-diff-bar">
+            <div class="dsa-diff-seg diff-nobadge" style="width:70.4%"></div>
+            <div class="dsa-diff-seg diff-achiever" style="width:22.2%"></div>
+            <div class="dsa-diff-seg diff-specialist" style="width:7.4%"></div>
+          </div>
+          <div class="dsa-diff-legend">
+            <span class="diff-nb">No badge 19</span><span class="diff-ac">Achiever 6</span><span class="diff-sp">Specialist 2</span>
+          </div>
+
+          <ul class="dsa-stat-list">
+            <li><span>EXP</span><strong>8,153</strong></li>
+            <li><span>Streak</span><strong>Longest 30 days</strong></li>
+            <li><span>Badges</span><strong>4× Monthly Topper</strong></li>
+          </ul>
+          <span class="dsa-view-link">View Profile →</span>
+        </a>
+      </div>
+
+
+      <!-- Topic-wise practice -->
+      <div class="dsa-topics reveal">
+        <h3 class="dsa-topics-title">Topic-wise Practice</h3>
+        <div class="dsa-topics-grid">
+          <div class="skill-bar" data-level="95"><span class="skill-name">Arrays<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="93"><span class="skill-name">Strings<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="92"><span class="skill-name">Linked Lists<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="90"><span class="skill-name">HashMap<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="88"><span class="skill-name">Stack<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="87"><span class="skill-name">Queue<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="90"><span class="skill-name">Sorting<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="88"><span class="skill-name">Searching<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="84"><span class="skill-name">Binary Search<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="80"><span class="skill-name">Trees<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="78"><span class="skill-name">Binary Search Tree<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="75"><span class="skill-name">Recursion<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="72"><span class="skill-name">Sliding Window<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="70"><span class="skill-name">Two Pointers<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="58"><span class="skill-name">Dynamic Programming<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+          <div class="skill-bar" data-level="50"><span class="skill-name">Backtracking<span class="skill-pct"></span></span><div class="bar-track"><div class="bar-fill"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="section education-section" id="education">
+    <div class="section-inner">
+      <h2 class="section-title">Education</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Sept 2023 — May 2027</span>
+            <h3>Bachelor of Technology in Information Technology (Honours)</h3>
+            <p class="timeline-org">Nehru Institute of Engineering and Technology, Tamil Nadu</p>
+            <p class="timeline-desc">Current CGPA: <strong>8.95</strong>. Consistently ranked 2nd across semesters.</p>
+            <div class="tag-row">
+              <span class="tag">Data Structures</span>
+              <span class="tag">Algorithm Design &amp; Analysis</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Operating Systems</span>
+              <span class="tag">DBMS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Jul 2021 — Mar 2023</span>
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p class="timeline-org">Nanjappa Municipal Boys Higher Secondary School, Tirupur</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Jun 2020 — Apr 2021</span>
+            <h3>Secondary School Leaving Certificate (SSLC)</h3>
+            <p class="timeline-org">M.S.P Solai Nadar Memorial Higher Secondary School, Dindigul</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="section section-alt" id="experience">
+    <div class="section-inner">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Feb 2026 — Present</span>
+            <h3>Full Stack Engineer</h3>
+            <p class="timeline-org">M8 IT Solutions Private Limited · Coimbatore, Tamil Nadu</p>
+            <ul class="timeline-list">
+              <li>Worked within a full-stack team developing scalable web applications, implementing CRUD operations, and improving overall user experience.</li>
+              <li>Designed, built, and integrated RESTful APIs to enable seamless frontend–backend communication, improving system efficiency through debugging and real-world application development.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">MongoDB</span><span class="tag">Express.js</span><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Oct 2024 — Dec 2024</span>
+            <h3>Java Full Stack Developer Virtual Internship</h3>
+            <p class="timeline-org">EduSkills Foundation · Coimbatore, Tamil Nadu</p>
+            <ul class="timeline-list">
+              <li>Gained hands-on experience in full-stack Java development, mastering both front-end and back-end fundamentals.</li>
+              <li>Built reusable UI components and applied modern frontend practices to improve performance and cross-browser compatibility.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Java</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">React.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Aug 2024 — Sep 2024</span>
+            <h3>Junior Java Developer</h3>
+            <p class="timeline-org">HunarIntern · Tamil Nadu, India</p>
+            <ul class="timeline-list">
+              <li>Completed a two-month Java Development Internship Program, gaining hands-on experience in Java programming and software development.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Java</span><span class="tag">Software Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Jul 2024 — Aug 2024</span>
+            <h3>Java Programmer</h3>
+            <p class="timeline-org">CodeAlpha · Coimbatore, Tamil Nadu</p>
+            <ul class="timeline-list">
+              <li>Completed a one-month Java Development Internship, acquiring hands-on Java programming and software development skills.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Java</span><span class="tag">Software Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="project-filters" id="projectFilters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="React.js">React.js</button>
+        <button class="filter-btn" data-filter="Node.js">Node.js</button>
+        <button class="filter-btn" data-filter="JavaScript">JavaScript</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <article class="project-card reveal" data-tags="React.js,Node.js,MongoDB,JavaScript">
+          <div class="project-thumb">
+            <div class="thumb-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+              <span>MERN E-Commerce &amp; Laundry App</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/saravanabava-dev/mern-ecommerce-app" target="_blank" rel="noopener" class="overlay-btn">GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>MERN E-Commerce &amp; Laundry Application</h3>
+            <p>A full-stack MERN platform for booking laundry and ironing services online — browse
+              services, place orders, manage a profile, and pay through an interactive web interface.</p>
+
+            <p class="project-subhead">Features</p>
+            <ul class="project-list">
+              <li>User authentication with Google OAuth login support</li>
+              <li>Laundry &amp; ironing service booking with a full order management system</li>
+              <li>Razorpay payment gateway integration</li>
+              <li>Image upload support (Multer) and location/map integration</li>
+              <li>Admin dashboard with analytics charts (Recharts)</li>
+            </ul>
+
+            <p class="project-subhead">Challenges Solved</p>
+            <p class="project-desc-sm">Wiring a secure payment and OAuth flow end to end — JWT auth,
+              Google sign-in, and Razorpay checkout — while keeping order state in sync between a
+              React/Vite frontend and an Express/MongoDB backend.</p>
+
+            <div class="tag-row">
+              <span class="tag">React.js</span><span class="tag">Vite</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">Razorpay</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-tags="React.js,JavaScript">
+          <div class="project-thumb">
+            <div class="thumb-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+              <span>Instagram Clone</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/saravanabava-dev/instagram-clone-react" target="_blank" rel="noopener" class="overlay-btn">GitHub</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Instagram Clone (React)</h3>
+            <p>A front-end social media clone replicating core Instagram features, built to study how
+              real-world social platforms structure their UI and component tree.</p>
+
+            <p class="project-subhead">Features</p>
+            <ul class="project-list">
+              <li>Post feed with images and captions</li>
+              <li>Like button functionality and a basic comments UI</li>
+              <li>Dynamic rendering via reusable React components</li>
+            </ul>
+
+            <p class="project-subhead">Challenges Solved</p>
+            <p class="project-desc-sm">Breaking a familiar, feature-dense interface into clean, reusable
+              React components — managing state and props — without a backend to lean on.</p>
+
+            <div class="tag-row">
+              <span class="tag">React.js</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-tags="JavaScript">
+          <div class="project-thumb">
+            <div class="thumb-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+              <span>Booksky — Book Manager</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/saravanabava-dev/booksky-book-manager" target="_blank" rel="noopener" class="overlay-btn">GitHub</a>
+              <a href="https://lnkd.in/gmdYFjhr" target="_blank" rel="noopener" class="overlay-btn">Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Booksky — Book Manager</h3>
+            <p>A simple, creative web app to manage and showcase books — add new titles, view them in
+              a clean list, and remove them dynamically.</p>
+
+            <p class="project-subhead">Features</p>
+            <ul class="project-list">
+              <li>Add new books through a popup form</li>
+              <li>Display book details in a clean, simple UI</li>
+              <li>Delete books dynamically from the list</li>
+            </ul>
+
+            <p class="project-subhead">Challenges Solved</p>
+            <p class="project-desc-sm">Managing dynamic list state with plain JavaScript — no framework —
+              while keeping the DOM updates and form handling simple and bug-free.</p>
+
+            <div class="tag-row">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-tags="JavaScript">
+          <div class="project-thumb">
+            <div class="thumb-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5h.01M14.5 9.5h.01M8 15c1 1 2.5 1.5 4 1.5s3-.5 4-1.5"/></svg>
+              <span>Number Guessing Game</span>
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/saravanabava-dev/number-guessing-game" target="_blank" rel="noopener" class="overlay-btn">GitHub</a>
+              <a href="https://saravanabava2704.neocities.org/" target="_blank" rel="noopener" class="overlay-btn">Live Demo</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Guess the Number Game</h3>
+            <p>A simple, interactive number guessing game — the app picks a random number between 1
+              and 10 and the player has to guess it before their score runs out.</p>
+
+            <p class="project-subhead">Features</p>
+            <ul class="project-list">
+              <li>Random number generation with win/lose conditions</li>
+              <li>Real-time score tracking</li>
+              <li>Responsive, centered game UI</li>
+            </ul>
+
+            <p class="project-subhead">Challenges Solved</p>
+            <p class="project-desc-sm">A beginner-friendly project focused on clean DOM manipulation and
+              game-state logic in plain JavaScript.</p>
+
+            <div class="tag-row">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="projects-more reveal">
+        More practice projects and DSA solutions live on my
+        <a href="https://github.com/saravanabava-dev" target="_blank" rel="noopener">GitHub profile</a> —
+        including a growing
+        <a href="https://github.com/saravanabava-dev/DSA-with-Java_tutorial" target="_blank" rel="noopener">Java DSA practice repo</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS & ACHIEVEMENTS ============ -->
+  <section class="section section-alt" id="achievements">
+    <div class="section-inner">
+      <h2 class="section-title">Achievements</h2>
+
+      <div class="achieve-grid">
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">🚀</div>
+          <h3>Smart India Hackathon 2025</h3>
+          <p>Presented a project in the Internal Round, competing among top teams at the institutional level.</p>
+        </div>
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">🥈</div>
+          <h3>National Level Technical Symposium</h3>
+          <p>Secured 2nd Prize, competing among participants from multiple institutions.</p>
+        </div>
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">🎓</div>
+          <h3>2nd Rank in Academics</h3>
+          <p>Consistently secured 2nd Rank across semesters, reflecting strong academic performance.</p>
+        </div>
+        <div class="achieve-card reveal">
+          <div class="achieve-icon">💻</div>
+          <h3>Multiple Full-Stack Applications</h3>
+          <p>Built and deployed several full-stack Java and MERN applications, demonstrating real-world development experience.</p>
+        </div>
+      </div>
+
+      <div class="cert-header reveal">
+        <h3 class="dsa-topics-title">Certifications</h3>
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" class="cert-view-all">
+          View all on LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 11.02-4.12 2.06 2.06 0 01-.02 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+      </div>
+
+      <!-- Individual certificate links weren't provided in the LinkedIn export, so each
+           card links to the LinkedIn profile's Licenses & certifications section.
+           Swap data-cert-url on any card for a direct certificate/credential URL once you have one. -->
+      <div class="cert-grid">
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" class="cert-card reveal">
+          <div class="cert-icon">📜</div>
+          <h4>Programming in Java</h4>
+          <p>NPTEL, IIT Kharagpur</p>
+          <span class="cert-link">View credential →</span>
+        </a>
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" class="cert-card reveal">
+          <div class="cert-icon">🏅</div>
+          <h4>Front-End Web Development</h4>
+          <p>Coursera (IBM)</p>
+          <span class="cert-link">View credential →</span>
+        </a>
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" class="cert-card reveal">
+          <div class="cert-icon">☕</div>
+          <h4>Java Training</h4>
+          <p>Certification Program</p>
+          <span class="cert-link">View credential →</span>
+        </a>
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" class="cert-card reveal">
+          <div class="cert-icon">🧩</div>
+          <h4>Full Stack Developer Internship</h4>
+          <p>Certificate of Participation</p>
+          <span class="cert-link">View credential →</span>
+        </a>
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" class="cert-card reveal">
+          <div class="cert-icon">📱</div>
+          <h4>Store Listing Certificate</h4>
+          <p>Google Play Academy</p>
+          <span class="cert-link">View credential →</span>
+        </a>
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" class="cert-card reveal">
+          <div class="cert-icon">🧑‍💼</div>
+          <h4>Career Edge — Young Professional</h4>
+          <p>TCS iON</p>
+          <span class="cert-link">View credential →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CODING PROFILES ============ -->
+  <section class="section" id="profiles">
+    <div class="section-inner">
+      <h2 class="section-title">Coding Profiles</h2>
+
+      <div class="profiles-grid">
+        <a href="https://github.com/saravanabava-dev" target="_blank" rel="noopener" class="profile-card reveal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.02 3.29 9.28 7.86 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.05 11.05 0 015.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55A10.53 10.53 0 0023.5 12.02C23.5 5.74 18.27.5 12 .5z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" class="profile-card reveal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 11.02-4.12 2.06 2.06 0 01-.02 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://leetcode.com" target="_blank" rel="noopener" class="profile-card reveal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M13.48 22c-.4 0-.79-.14-1.1-.43l-4.9-4.55a2.53 2.53 0 01-.7-1.31 2.6 2.6 0 01.44-1.95l5.42-7.34a2.55 2.55 0 013.61-.5 2.6 2.6 0 01.5 3.63l-4.06 5.49 3.63 3.37a2.55 2.55 0 01.13 3.6 2.5 2.5 0 01-1.97.99zM3.34 12.7a1 1 0 01-.72-1.7L9.05 4.4a1 1 0 111.44 1.39L4.06 12.4a1 1 0 01-.72.3z"/></svg>
+          <span>LeetCode</span>
+        </a>
+        <a href="https://www.geeksforgeeks.org" target="_blank" rel="noopener" class="profile-card reveal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.5 3.5 0 01-2.4.94h-6.2a.9.9 0 01-.9-.9v-1.8a.9.9 0 01.9-.9h5.1a.6.6 0 00.6-.6v-.3a.6.6 0 00-.6-.6h-6.9a2.7 2.7 0 00-2.7 2.7v1.8a2.7 2.7 0 002.7 2.7h6.9a5.3 5.3 0 003.65-1.46 5 5 0 00.415-4.325h-2.1c.12.32.18.665.18 1.02 0 .35-.06.68-.18 1z"/></svg>
+          <span>GeeksforGeeks</span>
+        </a>
+        <a href="https://www.naukri.com/code360" target="_blank" rel="noopener" class="profile-card reveal">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 4l-6 8 6 8M16 4l6 8-6 8"/></svg>
+          <span>Code360</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section section-alt" id="contact">
+    <div class="section-inner">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-intro">Have a role, project, or question in mind? My inbox is open.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <button class="contact-item copyable" data-copy="saravanabava2704@gmail.com">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4V4z"/><path d="M4 4l8 8 8-8"/></svg>
+            <span>saravanabava2704@gmail.com</span>
+            <em class="copy-hint">click to copy</em>
+          </button>
+          <button class="contact-item copyable" data-copy="+91 7200206108">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>+91 7200206108</span>
+            <em class="copy-hint">click to copy</em>
+          </button>
+          <div class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Coimbatore, Tamil Nadu, India</span>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+            <span class="error-msg" data-for="name"></span>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            <span class="error-msg" data-for="email"></span>
+          </div>
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+            <span class="error-msg" data-for="message"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            <span class="btn-text">Send Message</span>
+          </button>
+          <p class="form-success" id="formSuccess">Message sent — thanks for reaching out! I'll reply soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#hero" class="nav-brand"><span class="brand-bracket">&lt;</span>SB<span class="brand-bracket">/&gt;</span></a>
+      <nav class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-socials">
+        <a href="https://github.com/saravanabava-dev" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.02 3.29 9.28 7.86 10.78.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11.05 11.05 0 015.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55A10.53 10.53 0 0023.5 12.02C23.5 5.74 18.27.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/saravanabava2704" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 11.02-4.12 2.06 2.06 0 01-.02 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a href="mailto:saravanabava2704@gmail.com" aria-label="Email" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4V4z"/><path d="M4 4l8 8 8-8"/></svg>
+        </a>
+      </div>
+      <p class="footer-copy">© <span id="year"></span> Saravana Bava. Built from scratch with HTML, CSS &amp; JS.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
