@@ -71,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
+  emailjs.init("0o8Gh_Y0Q_RG6v4Kt");
+
   /* ---------- 4. SCROLL PROGRESS BAR ---------- */
   (function scrollProgressModule(){
     const bar = document.getElementById('scrollProgress');
@@ -274,10 +276,29 @@ document.addEventListener('DOMContentLoaded', () => {
         success.classList.remove('show');
         return;
       }
-      // No backend is connected — simulate a successful send.
-      success.classList.add('show');
-      form.reset();
-      setTimeout(() => success.classList.remove('show'), 5000);
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const originalText = btnText.textContent;
+      submitBtn.disabled = true;
+      btnText.textContent = 'Sending...';
+
+      emailjs.sendForm('service_gqhdxcz', 'template_ct553b2', form)
+        .then(() => {
+          success.textContent = "Message sent — thanks for reaching out! I'll reply soon.";
+          success.classList.add('show');
+          form.reset();
+          setTimeout(() => success.classList.remove('show'), 5000);
+        })
+        .catch((error) => {
+          success.textContent = 'Something went wrong — please email me directly instead.';
+          success.classList.add('show');
+          console.error('EmailJS error:', error);
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          btnText.textContent = originalText;
+        });
     });
 
     ['input', 'blur'].forEach(evt => {
