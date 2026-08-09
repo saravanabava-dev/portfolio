@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/coding-stats.js": {
+      "maxDuration": 10
+    }
+  }
+}
